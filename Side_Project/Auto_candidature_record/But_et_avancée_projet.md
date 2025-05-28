@@ -34,7 +34,7 @@ J’ai donc opté pour un système de filtrage évolutif, que je teste et améli
 - Ajout d’une macro qui, lorsqu’une nouvelle ligne est ajoutée, applique automatiquement un drag down (copie automatique) sur les colonnes qui dépendent d'autres données (date, statut, etc.).
 
 **Edit 28/05/2025** : 
-- Création d'une database avec les réponses des candidatures recu → Utilisation de ML dès que la database est assez remplie (Majorité % en refus, % entretien < 10%)
+- Création d'une database avec les réponses des candidatures recu (mailscraping) → Utilisation de ML dès que la database est assez remplie (Majorité % en refus, % entretien < 10%)
 - Mise à jour des filtres afin de mettre à jour les réponses recus
 - 
 
