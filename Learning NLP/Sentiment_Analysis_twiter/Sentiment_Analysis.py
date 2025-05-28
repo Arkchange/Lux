@@ -1,10 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import make_pipeline
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
 from nltk.sentiment import SentimentIntensityAnalyzer
 from tqdm import tqdm
@@ -19,8 +15,8 @@ drop_features = drop_features + ["thumbnail","quote_url","created_at","id","time
 
 df = df.drop(columns=drop_features).reset_index()
 
+# Apply the sentiment analysis using NLTK's SentimentIntensityAnalyzer
 sia = SentimentIntensityAnalyzer()
-
 res = {}
 for i, row in tqdm(df.iterrows(), total=len(df)):
     text = row["tweet"]
@@ -33,7 +29,6 @@ Results = Results.reset_index().rename({"index" : "Id"})
 Results = Results.merge(df, how = "left")
 
 # Check twiter sentiment
-
 def detect_stance(text, compound):
     text_lower = text.lower()
 
