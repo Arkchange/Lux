@@ -36,6 +36,10 @@ J’ai donc opté pour un système de filtrage évolutif, que je teste et améli
 **Edit 28/05/2025** : 
 - Création d'une database avec les réponses des candidatures recu (mailscraping) → Utilisation de ML dès que la database est assez remplie (Majorité % en refus, % entretien < 10%)
 - Mise à jour des filtres afin de mettre à jour les réponses recus
-- 
+
+**Edit 29/05/2025** :
+- Développement d’un modèle NLP utilisant les bibliothèques scikit-learn et NLTK (TF-IDF, stemming, lemmatisation) pour classer automatiquement les réponses à des candidatures par e-mail en trois catégories : "Accepté", "Refusé", "En cours".
+- Tests réalisés avec différents prétraitements linguistiques, notamment le stemming et la lemmatisation, ainsi qu’un modèle pré-entraîné (SIA). La lemmatisation a donné les meilleurs résultats → Déploiement du modèle en local.
+- Intégration du modèle de machine learning dans un flux automatisé grâce à la création d’une API locale permettant de remplacer les filtres manuels par une prédiction automatisée.
 
 
