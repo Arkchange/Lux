@@ -7,8 +7,9 @@ from sklearn.metrics import classification_report, accuracy_score
 import spacy
 import nltk
 from transformers import pipeline
+import joblib
 
-df = pd.read_csv('Learning NLP/Sentiment_Analysis_twiter/Candidature.csv', encoding='utf-8')
+df = pd.read_csv('Side_Project/Auto_candidature_record/Candidature.csv', encoding='utf-8')
 
 def preprocess_text(text):
     # Convert to lowercase
@@ -47,6 +48,6 @@ model.fit(X_train_vec, y_train)
 
 y_pred = model.predict(X_test_vec)
 
-print("Accuracy:", accuracy_score(y_test, y_pred))
-
 print("Classification Report:\n", classification_report(y_test, y_pred))
+
+joblib.dump(model, "Candidature.joblib")
